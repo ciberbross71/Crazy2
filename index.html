@@ -73,10 +73,10 @@
 
 <body class="flex flex-col min-h-screen">
 
-<section class="relative w-full h-auto md:h-[55vh] overflow-hidden leading-[0]">
+<section class="relative w-full aspect-video md:aspect-auto md:h-[55vh] overflow-hidden">
     <img 
         src="IMG_2485.jpeg"
-        class="w-full h-auto md:h-full md:object-cover md:object-top"
+        class="w-full h-full object-cover object-top"
         alt="Trabajo Crazy Cars Garage"
     >
 
@@ -95,7 +95,6 @@
                 <li><a href="#historia" class="nav-link px-3 py-2 block">Historia</a></li>
                 <li><a href="#autos-locos" class="nav-link px-3 py-2 block">Autos Locos</a></li>
                 <li><a href="#servicios" class="nav-link px-3 py-2 block">Servicios</a></li>
-                <li><a href="#podcast" class="nav-link px-3 py-2 block">Podcast</a></li>
                 <li><a href="#tienda" class="nav-link px-3 py-2 block">Tienda</a></li>
                 <li><a href="#carrito" class="nav-link px-3 py-2 block"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
@@ -105,41 +104,42 @@
 
 <header class="container mx-auto px-4 mt-8 max-w-6xl">
     <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="animate-bounce-slow flex-shrink-0">
+        <div class="animate-bounce-slow">
             <img src="IMG_2476.png"
                  alt="Logo Crazy Cars Garage"
                  loading="lazy"
                  class="w-48 md:w-64 rounded-full border-4 border-white shadow-2xl mx-auto">
         </div>
 
-        <div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-3xl shadow-2xl flex-grow 
-                    transform rotate-0 md:-rotate-1 
-                    border-b-8 border-[#FF00FF] 
-                    text-center md:text-right">
+<div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-3xl shadow-2xl flex-grow 
+            transform rotate-0 md:-rotate-1 
+            border-b-8 border-[#FF00FF] 
+            text-center md:text-right">
 
-            <h1 class="text-4xl md:text-7xl mb-4 md:mb-6 neon-title">
-                CRAZY CARS GARAGE
-            </h1>
+    <h1 class="text-4xl md:text-7xl mb-4 md:mb-6 neon-title">
+        CRAZY CARS GARAGE
+    </h1>
 
-            <p class="text-lg md:text-2xl font-bold text-gray-800 mb-4">
-                Donde la locura se convierte en arte.
-            </p>
+    <p class="text-lg md:text-2xl font-bold text-gray-800 mb-4">
+        Donde la locura se convierte en arte.
+    </p>
 
-            <div class="w-full h-1 bg-gradient-to-r md:bg-gradient-to-l 
-                        from-purple-500 via-pink-500 to-red-500 mb-6"></div>
+    <div class="w-full h-1 bg-gradient-to-r md:bg-gradient-to-l 
+                from-purple-500 via-pink-500 to-red-500 mb-6"></div>
 
-            <p class="text-md md:text-xl text-gray-700 leading-relaxed font-medium italic">
-                "Nos dedicamos a 
-                <span class="text-[#FF00FF] font-black bg-yellow-300 px-2 transform skew-x-12 inline-block">
-                    chapa, pintura y alguna que otra floritura
-                </span>."
-            </p>
+    <p class="text-md md:text-xl text-gray-700 leading-relaxed font-medium italic">
+        "Nos dedicamos a 
+        <span class="text-[#FF00FF] font-black bg-yellow-300 px-2 transform skew-x-12 inline-block">
+            chapa, pintura y alguna que otra floritura
+        </span>."
+    </p>
 
-            <p class="mt-4 text-sm md:text-base text-gray-600">
-                En Crazy Business S.L. no solo reparamos coches, les devolvemos el alma. 
-                Desde restauraciones clásicas hasta personalizaciones extremas.
-            </p>
-        </div>
+    <p class="mt-4 text-sm md:text-base text-gray-600">
+        En Crazy Business S.L. no solo reparamos coches, les devolvemos el alma. 
+        Desde restauraciones clásicas hasta personalizaciones extremas.
+    </p>
+</div>
+
     </div>
 </header>
 
@@ -175,7 +175,7 @@
                 <h3 class="text-lg text-[#FF00FF] mb-2 uppercase">Ubicación</h3>
                 <p class="text-sm">Calle Los Cerezos 32</p>
                 <p class="text-sm mb-4">Serranillos del Valle, Madrid</p>
-                <a href="https://maps.google.com" target="_blank" class="inline-block bg-[#40E0D0] text-gray-900 font-bold py-2 px-6 rounded-full text-xs">
+                <a href="https://maps.app.goo.gl/RGWWJkYjTgLcFsbU6?g_st=ic" target="_blank" class="inline-block bg-[#40E0D0] text-gray-900 font-bold py-2 px-6 rounded-full text-xs">
                     VER EN MAPA
                 </a>
             </div>
@@ -187,5 +187,4 @@
 </footer>
 
 </body>
-
 </html>
