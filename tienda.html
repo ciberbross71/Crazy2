@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | Crazy Cars Garage</title>
+    <style>
+        /* Estilos Generales - Inspirados en tu marca */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e63946; /* Rojo deportivo */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        /* Contenedor del Catálogo */
+        .catalogo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Tarjeta de Producto */
+        .producto {
+            background-color: #262626;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .producto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(230, 57, 70, 0.2);
+            border-color: #e63946;
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .producto h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #eee;
+        }
+
+        .precio {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e63946;
+            margin: 10px 0;
+        }
+
+        .btn-comprar {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .btn-comprar:hover {
+            background-color: #c32f3a;
+        }
+
+        /* Etiqueta de edición especial */
+        .badge {
+            background: #ffd700;
+            color: black;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Catálogo Professional Spray Guns</h1>
+    <p class="subtitulo">Herramientas de alta gama para acabados perfectos por David Vergara</p>
+
+    <div class="catalogo">
+        
+        <div class="producto">
+            <img src="IMG_2509.webp" alt="Pistola Norber Alonso Roja">
+            <div class="badge">TOP VENTAS</div>
+            <h2>Norber Alonso Hybrid - Red Edition</h2>
+            <p class="precio">249.99€</p>
+            <button class="btn-comprar">Añadir al Carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="IMG_2506.webp" alt="Pistola Norber Alonso Púrpura">
+            <h2>Norber Alonso Hybrid - Purple Gloss</h2>
+            <p class="precio">255.00€</p>
+            <button class="btn-comprar">Añadir al Carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="IMG_2500.webp" alt="Pistola Scorpion Paint">
+            <div class="badge">EDICIÓN ESPECIAL</div>
+            <h2>Scorpion Paint - Black & Orange</h2>
+            <p class="precio">289.00€</p>
+            <button class="btn-comprar">Añadir al Carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="IMG_2501.webp" alt="Pistola Verde">
+            <h2>Norber Alonso Hybrid - Green Toxic</h2>
+            <p class="precio">245.00€</p>
+            <button class="btn-comprar">Añadir al Carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="IMG_2508.webp" alt="Sata Jet X">
+            <h2>Sata Jet X 5500 - Stealth Black</h2>
+            <p class="precio">650.00€</p>
+            <button class="btn-comprar">Añadir al Carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="IMG_2504.webp" alt="Pistola Plateada">
+            <h2>Classic Pro - Silver Finish</h2>
+            <p class="precio">180.00€</p>
+            <button class="btn-comprar">Añadir al Carrito</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
