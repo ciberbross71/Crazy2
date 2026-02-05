@@ -3,102 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crazy Cars Garage - ¡En boxes!</title>
+    <title>Crazy Cars Garage - Chapa y Pintura</title>
+
+    <meta name="author" content="Jose Antonio Cadenas Martín">
+    <meta name="copyright" content="Jose Antonio Cadenas Martín">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Estética inspirada en Autos Locos y Carreras */
+        :root {
+            --crazy-turquoise: #40E0D0;
+            --crazy-fuchsia: #FF00FF;
+            --crazy-dark: #1a1a1a;
+        }
+
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #e63946; /* Rojo carrera */
-            background-image: radial-gradient(#333 10%, transparent 10%);
-            background-size: 30px 30px; /* Fondo de puntos tipo cómic */
-            font-family: 'Arial Black', Gadget, sans-serif;
-            overflow: hidden;
-        }
-
-        .contenedor {
-            text-align: center;
-            background: white;
-            padding: 50px;
-            border: 8px solid #000;
-            box-shadow: 15px 15px 0px #ffb703; /* Sombra amarilla sólida tipo pop-art */
-            transform: rotate(-2deg);
-            max-width: 80%;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            color: #000;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            line-height: 0.9;
-        }
-
-        .subtitulo {
-            font-size: 1.5rem;
-            background: #ffb703;
-            display: inline-block;
-            padding: 5px 20px;
-            margin-top: 20px;
-            border: 4px solid #000;
-        }
-
-        .mensaje {
-            margin-top: 30px;
-            font-size: 1.2rem;
+            background-color: var(--crazy-turquoise);
+            font-family: 'Roboto', sans-serif;
             color: #333;
+            overflow-x: hidden;
         }
 
-        /* Animación de vibración de motor */
-        .vibrar {
-            display: inline-block;
-            animation: motor 0.2s infinite;
+        h1, h2, h3, .nav-item {
+            font-family: 'Permanent Marker', cursive;
         }
 
-        @keyframes motor {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            20% { transform: translate(-1px, -2px) rotate(-1deg); }
-            40% { transform: translate(-3px, 0px) rotate(1deg); }
-            60% { transform: translate(3px, 2px) rotate(0deg); }
-            80% { transform: translate(1px, -1px) rotate(1deg); }
-            100% { transform: translate(-1px, 2px) rotate(-1deg); }
-        }
-
-        .boton-insta {
-            display: inline-block;
-            margin-top: 30px;
-            background: #000;
+        .neon-title {
             color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1rem;
-            border-radius: 50px;
-            transition: 0.3s;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px var(--crazy-fuchsia),
+                0 0 82px var(--crazy-fuchsia);
         }
 
-        .boton-insta:hover {
-            background: #ffb703;
-            color: #000;
-            transform: scale(1.1);
+        .nav-bar {
+            background-color: var(--crazy-fuchsia);
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
         }
 
-        .logo-temporal {
-            font-size: 5rem;
-            margin-bottom: 10px;
+        .nav-link {
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+        }
+
+        .gallery-img {
+            transition: transform 0.3s ease;
+            border: 4px solid var(--crazy-fuchsia);
+            box-shadow: 5px 5px 0px var(--crazy-dark);
+        }
+
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite ease-in-out;
         }
     </style>
 </head>
-<body>
 
-    <div class="contenedor">
-        <div class="logo-temporal">🏎️💨</div>
-        <h1 class="vibrar">¡ESTAMOS EN EL BOXES!</h1>
-        <div class="subtitulo">PÁGINA EN CONSTRUCCIÓN</div>
-        
-        <p class="mensaje">
-            Eni
+<body class="flex flex-col min-h-screen">
+
+<section class="relative w-full h-[25vh] md:h-[55vh] overflow-hidden">
+    <img 
+        src="IMG_2485.jpeg"
+        class="w-full h-full object-cover object-top"
+        alt="Trabajo Crazy Cars Garage"
+    >
+
+    <img 
+        src="IMG_2455.jpeg"
+        class="absolute top-0 right-0 h-full w-auto object-cover z-10"
+        alt="Arte Crazy Cars Garage"
+    >
+</section>
+
+<nav class="nav-bar text-white sticky top-0 z-50">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="flex flex-col md:flex-row justify-center md:justify-between items-center py-3">
+                <a href="index.html" class="text-2xl font-bold hidden md:block" style="font-family: 'Permanent Marker'">CRAZY BUSINESS S.L.</a>
+            <ul class="flex flex-wrap justify-center gap-4 text-sm md:text-lg uppercase">
+                <li><a href="#historia" class="nav-link px-3 py-2 block">Historia</a></li>
+                <li><a href="autos-locos.html" class="nav-link px-3 py-2 block">Autos Locos</a></li>
+                <li><a href="#servicios" class="nav-link px-3 py-2 block">Servicios</a></li>
+                <li><a href="#podcast" class="nav-link px-3 py-2 block">Podcast</a></li>
+                <li><a href="build.html" class="nav-link px-3 py-2 block">Tienda</a></li>
+                <li><a href="#carrito" class="nav-link px-3 py-2 block"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
