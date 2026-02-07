@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crazy Cars Garage - Chapa y Pintura</title>
+    <title>Historia - Crazy Cars Garage</title>
 
     <meta name="author" content="Jose Antonio Cadenas Martín">
     <meta name="copyright" content="Jose Antonio Cadenas Martín">
 
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -36,12 +34,7 @@
 
         .neon-title {
             color: #fff;
-            text-shadow:
-                0 0 7px #fff,
-                0 0 10px #fff,
-                0 0 21px #fff,
-                0 0 42px var(--crazy-fuchsia),
-                0 0 82px var(--crazy-fuchsia);
+            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px var(--crazy-fuchsia), 0 0 82px var(--crazy-fuchsia);
         }
 
         .nav-bar {
@@ -54,9 +47,17 @@
             text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
         }
 
-        .gallery-img {
-            transition: transform 0.3s ease;
-            border: 4px solid var(--crazy-fuchsia);
+        .story-card {
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 10px 10px 0px var(--crazy-dark);
+            border: 3px solid var(--crazy-dark);
+        }
+
+        .accent-box {
+            background-color: var(--crazy-fuchsia);
+            color: white;
+            transform: rotate(-1deg);
             box-shadow: 5px 5px 0px var(--crazy-dark);
         }
 
@@ -74,23 +75,14 @@
 <body class="flex flex-col min-h-screen">
 
 <section class="relative w-full h-[25vh] md:h-[55vh] overflow-hidden">
-    <img 
-        src="IMG_2485.jpeg"
-        class="w-full h-full object-cover object-top"
-        alt="Trabajo Crazy Cars Garage"
-    >
-
-    <img 
-        src="IMG_2455.jpeg"
-        class="absolute top-0 right-0 h-full w-auto object-cover z-10"
-        alt="Arte Crazy Cars Garage"
-    >
+    <img src="IMG_2485.jpeg" class="w-full h-full object-cover object-top" alt="Trabajo Crazy Cars Garage">
+    <img src="IMG_2455.jpeg" class="absolute top-0 right-0 h-full w-auto object-cover z-10" alt="Arte Crazy Cars Garage">
 </section>
 
 <nav class="nav-bar text-white sticky top-0 z-50">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="flex flex-col md:flex-row justify-center md:justify-between items-center py-3">
-                <a href="index.html" class="text-2xl font-bold hidden md:block" style="font-family: 'Permanent Marker'">CRAZY BUSINESS S.L.</a>
+            <a href="index.html" class="text-2xl font-bold hidden md:block" style="font-family: 'Permanent Marker'">CRAZY BUSINESS S.L.</a>
             <ul class="flex flex-wrap justify-center gap-4 text-sm md:text-lg uppercase">
                 <li><a href="index.html" class="nav-link px-3 py-2 block text-white"><i class="fas fa-home"></i></a></li>
                 <li><a href="historia.html" class="nav-link px-3 py-2 block">Historia</a></li>
@@ -104,54 +96,49 @@
     </div>
 </nav>
 
-<header class="container mx-auto px-4 mt-8 max-w-6xl">
-    <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="animate-bounce-slow">
-            <img src="IMG_2476.png"
-                 alt="Logo Crazy Cars Garage"
-                 loading="lazy"
-                 class="w-48 md:w-64 rounded-full border-4 border-white shadow-2xl mx-auto">
+<main class="flex-grow container mx-auto px-4 py-12 max-w-6xl">
+    
+    <div class="text-center mb-12">
+        <h1 class="text-5xl md:text-8xl neon-title uppercase tracking-tighter">NUESTRA ALMA</h1>
+    </div>
+
+    <div class="story-card p-8 md:p-12 mb-12">
+        <div class="flex flex-col md:flex-row gap-10 items-center">
+            <div class="w-full md:w-1/3 animate-bounce-slow">
+                <img src="IMG_2476.png" alt="David Vergara" class="w-full rounded-full border-8 border-[#40E0D0] shadow-lg">
+            </div>
+            <div class="w-full md:w-2/3">
+                <h2 class="text-4xl text-gray-900 mb-6 border-b-4 border-yellow-400 inline-block uppercase">Más que chapa y pintura</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Detrás de <strong>Crazy Cars Garage</strong> está la visión de <strong>David Vergara</strong>. Desde nuestros inicios en Serranillos del Valle, Madrid, hemos transformado el taller en un laboratorio de arte automotriz.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="accent-box p-8 rounded-xl">
+            <h3 class="text-2xl mb-4 uppercase"><i class="fas fa-rocket mr-2"></i> ¿Qué hacemos?</h3>
+            <p class="font-medium">
+                Nos especializamos en personalización extrema y restauraciones que desafían el tiempo. Cada coche recibe un trato artesanal, desde el lijado a mano hasta el último brillo.
+            </p>
         </div>
 
-<div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-3xl shadow-2xl flex-grow 
-            transform rotate-0 md:-rotate-1 
-            border-b-8 border-[#FF00FF] 
-            text-center md:text-right">
-
-    <h1 class="text-4xl md:text-7xl mb-4 md:mb-6 neon-title">
-        CRAZY CARS GARAGE
-    </h1>
-
-    <p class="text-lg md:text-2xl font-bold text-gray-800 mb-4">
-        Donde la locura se convierte en arte.
-    </p>
-
-    <div class="w-full h-1 bg-gradient-to-r md:bg-gradient-to-l 
-                from-purple-500 via-pink-500 to-red-500 mb-6"></div>
-
-    <p class="text-md md:text-xl text-gray-700 leading-relaxed font-medium italic">
-        "Nos dedicamos a 
-        <span class="text-[#FF00FF] font-black bg-yellow-300 px-2 transform skew-x-12 inline-block">
-            chapa, pintura y alguna que otra floritura
-        </span>."
-    </p>
-
-    <p class="mt-4 text-sm md:text-base text-gray-600">
-        En Crazy Business S.L. no solo reparamos coches, les devolvemos el alma. 
-        Desde restauraciones clásicas hasta personalizaciones extremas.
-    </p>
-</div>
-
+        <div class="bg-white p-8 rounded-xl border-4 border-fuchsia-500 shadow-xl">
+            <h3 class="text-2xl mb-4 text-fuchsia-600 uppercase" style="font-family: 'Permanent Marker'"><i class="fas fa-heart mr-2"></i> Filosofía</h3>
+            <p class="text-gray-700">
+                "Si puedes soñarlo, podemos pintarlo". No nos conformamos con lo estándar; buscamos devolver el alma a cada vehículo.
+            </p>
+        </div>
     </div>
-</header>
 
-<main id="autos-locos" class="container mx-auto px-4 py-12 max-w-6xl">
-    <h2 class="text-3xl md:text-4xl text-center text-white mb-10" style="font-family: 'Permanent Marker'; text-shadow: 2px 2px #FF00FF;">NUESTROS TRABAJOS</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <img src="IMG_2488.jpeg" alt="Aerografía custom" loading="lazy" class="gallery-img w-full h-64 object-cover rounded-xl">
-        <img src="IMG_2492.jpeg" alt="Restauración total" loading="lazy" class="gallery-img w-full h-64 object-cover rounded-xl">
-        <img src="IMG_2481.jpeg" alt="Proceso profesional" loading="lazy" class="gallery-img w-full h-64 object-cover rounded-xl">
+    <div class="mt-16 text-center">
+        <h2 class="text-3xl text-white mb-8 uppercase" style="font-family: 'Permanent Marker'; text-shadow: 2px 2px #FF00FF;">Desde 2024 creando locuras</h2>
+        <div class="flex justify-center gap-4">
+             <img src="IMG_2488.jpeg" class="w-1/3 h-40 object-cover rounded-lg border-2 border-white shadow-md rotate-2">
+             <img src="IMG_2492.jpeg" class="w-1/3 h-40 object-cover rounded-lg border-2 border-white shadow-md -rotate-2">
+             <img src="IMG_2481.jpeg" class="w-1/3 h-40 object-cover rounded-lg border-2 border-white shadow-md rotate-1">
+        </div>
     </div>
 </main>
 
