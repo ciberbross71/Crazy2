@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Oficial Norber Alonso - Crazy Cars Garage</title>
+    <title>Crazy Cars Garage - Chapa y Pintura</title>
 
     <meta name="author" content="Jose Antonio Cadenas Martín">
     <meta name="copyright" content="Jose Antonio Cadenas Martín">
 
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -34,7 +36,12 @@
 
         .neon-title {
             color: #fff;
-            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px var(--crazy-fuchsia), 0 0 82px var(--crazy-fuchsia);
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px var(--crazy-fuchsia),
+                0 0 82px var(--crazy-fuchsia);
         }
 
         .nav-bar {
@@ -47,151 +54,58 @@
             text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
         }
 
-        .product-card {
-            background: white;
-            border-radius: 1.5rem;
-            border: 3px solid var(--crazy-dark);
-            box-shadow: 10px 10px 0px var(--crazy-dark);
-            overflow: hidden;
+        .gallery-img {
             transition: transform 0.3s ease;
+            border: 4px solid var(--crazy-fuchsia);
+            box-shadow: 5px 5px 0px var(--crazy-dark);
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        .price-tag {
-            background-color: #000;
-            color: var(--crazy-turquoise);
-            font-family: 'Permanent Marker';
-            padding: 8px 20px;
-            transform: rotate(-2deg);
-            display: inline-block;
-            box-shadow: 4px 4px 0px var(--crazy-fuchsia);
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite ease-in-out;
         }
-
-        .badge-norber {
-            background: var(--crazy-dark);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .product-link {
-            display: block;
-            cursor: pointer;
-        }
-
-        /* CORRECCIÓN: Estilo para permitir el scroll en los modales */
-        .modal-content-scroll {
-            max-height: 70vh;
-            overflow-y: auto;
-            padding-right: 10px; /* Espacio para la barra si aparece */
-        }
-
-        /* Estilo personalizado para la barra de scroll (opcional) */
-        .modal-content-scroll::-webkit-scrollbar {
-            width: 8px;
-        }
-        .modal-content-scroll::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        .modal-content-scroll::-webkit-scrollbar-thumb {
-            background: var(--crazy-fuchsia);
-            border-radius: 10px;
-        }
-
     </style>
 </head>
 
 <body class="flex flex-col min-h-screen">
 
 <section class="relative w-full h-[25vh] md:h-[55vh] overflow-hidden">
-    <img src="IMG_2485.jpeg" class="w-full h-full object-cover object-top" alt="Banner Crazy Cars">
-    <img src="IMG_2455.jpeg" class="absolute top-0 right-0 h-full w-auto object-cover z-10" alt="Arte Crazy Cars">
+    <img 
+        src="IMG_2485.jpeg"
+        class="w-full h-full object-cover object-top"
+        alt="Trabajo Crazy Cars Garage"
+    >
+
+    <img 
+        src="IMG_2455.jpeg"
+        class="absolute top-0 right-0 h-full w-auto object-cover z-10"
+        alt="Arte Crazy Cars Garage"
+    >
 </section>
 
 <nav class="nav-bar text-white sticky top-0 z-50">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="flex flex-col md:flex-row justify-center md:justify-between items-center py-3">
-            <a href="index.html" class="text-2xl font-bold hidden md:block font-crazy">CRAZY BUSINESS S.L.</a>
-            <ul class="flex flex-wrap justify-center gap-4 text-sm md:text-lg uppercase font-crazy">
+                <a href="index.html" class="text-2xl font-bold hidden md:block" style="font-family: 'Permanent Marker'">CRAZY BUSINESS S.L.</a>
+            <ul class="flex flex-wrap justify-center gap-4 text-sm md:text-lg uppercase">
                 <li><a href="index.html" class="nav-link px-3 py-2 block text-white"><i class="fas fa-home"></i></a></li>
-                <li><a href="historia.html" class="nav-link px-3 py-2 block">Historia</a></li>
+                <li><a href="#historia" class="nav-link px-3 py-2 block">Historia</a></li>
                 <li><a href="autos-locos.html" class="nav-link px-3 py-2 block">Autos Locos</a></li>
-                <li><a href="servicios.html" class="nav-link px-3 py-2 block">Servicios</a></li>
-                <li><a href="build.html" class="nav-link px-3 py-2 block">Podcast</a></li>
-                <li><a href="tienda.html" class="nav-link px-3 py-2 block">Tienda</a></li>
-                <li><a href="carrito.html" class="nav-link px-3 py-2 block"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#servicios" class="nav-link px-3 py-2 block">Servicios</a></li>
+                <li><a href="#podcast" class="nav-link px-3 py-2 block">Podcast</a></li>
+                <li><a href="build.html" class="nav-link px-3 py-2 block">Tienda</a></li>
+                <li><a href="#carrito" class="nav-link px-3 py-2 block"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<main class="flex-grow container mx-auto px-4 py-12 max-w-6xl">
-    
-    <div class="text-center mb-16">
-        <span class="badge-norber">Distribuidor Oficial Autorizado</span>
-        <h1 class="text-5xl md:text-8xl neon-title uppercase tracking-tighter mt-4">NORBER ALONSO</h1>
-        <p class="text-white text-xl md:text-2xl mt-4 font-bold uppercase" style="text-shadow: 2px 2px var(--crazy-dark)">Pistolas Profesionales de Pintura</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        
-        <div class="product-card flex flex-col">
-            <a href="pistola_R25_Smiley.html" class="product-link">
-                <div class="bg-gray-200 h-72 flex items-center justify-center p-4 hover:bg-gray-300 transition">
-                    <img src="IMG_2570.jpeg" class="max-h-full object-contain" alt="Smiley_main.jpg">
-                </div>
-            </a>
-            <div class="p-8 text-center flex-grow">
-                <a href="pistola_R25_Smiley.html" class="hover:text-fuchsia-600 transition">
-                    <h3 class="text-3xl mb-2 uppercase">Pistola R25 Smiley</h3>
-                </a>
-                <p class="text-gray-500 text-sm mb-4">Acabado Premium para barnices</p>
-                <div class="price-tag text-2xl mb-6">289.00€</div>
-                <a href="pistola_R25_Smiley.html" class="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-fuchsia-600 transition block uppercase shadow-lg">Ver Detalles</a>
-            </div>
-        </div>
-
-        <div class="product-card flex flex-col">
-            <a href="vulcan_compact_pro.html" class="product-link">
-                <div class="bg-gray-200 h-72 flex items-center justify-center p-4 hover:bg-gray-300 transition">
-                    <img src="IMG_2571.jpeg" class="max-h-full object-contain" alt="Pistola vulcan compact pro">
-                </div>
-            </a>
-            <div class="p-8 text-center flex-grow">
-                <a href="vulcan_compact_pro.html" class="hover:text-fuchsia-600 transition">
-                    <h3 class="text-3xl mb-2 uppercase">Pistola R25 Vulcan Compact Pro</h3>
-                </a>
-                <p class="text-gray-500 text-sm mb-4">Eficiencia y versatilidad</p>
-                <div class="price-tag text-2xl mb-6">320.01€</div>
-                <a href="vulcan_compact_pro.html" class="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-fuchsia-600 transition block uppercase shadow-lg">Ver Detalles</a>
-            </div>
-        </div>
-
-        <div class="product-card flex flex-col">
-            <a href="manometro_volumetrico_NA.html" class="product-link">
-                <div class="bg-gray-200 h-72 flex items-center justify-center p-4 hover:bg-gray-300 transition">
-                    <img src="IMG_2572.jpeg" class="max-h-full object-contain" alt="Manometro Volumetrico">
-                </div>
-            </a>
-            <div class="p-8 text-center flex-grow">
-                <a href="manometro_volumetrico_NA.html" class="hover:text-fuchsia-600 transition">
-                    <h3 class="text-3xl mb-2 uppercase">Manometro Volumetrico</h3>
-                </a>
-                <p class="text-gray-500 text-sm mb-4">Regulador con Manometro</p>
-                <div class="price-tag text-2xl mb-6">29.00€</div>
-                <a href="manometro_volumetrico_NA.html" class="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-fuchsia-600 transition block uppercase shadow-lg">Ver Detalles</a>
-            </div>
-        </div>
-
-    </div>
-</main>
+<header class="container mx-auto px-4 mt-8 max-w-6xl">
+</header>
 
 <footer class="bg-gray-900 text-white pt-10 pb-6 border-t-4 border-[#FF00FF]">
     <div class="container mx-auto px-4">
@@ -236,17 +150,17 @@
 </div>
 
 <div id="modalPrivacidad" class="fixed inset-0 bg-black bg-opacity-80 z-[101] hidden flex items-center justify-center p-4">
-    <div class="bg-white text-gray-800 max-w-2xl w-full rounded-3xl border-4 border-[#40E0D0] shadow-2xl flex flex-col max-h-[90vh]">
-        <div class="p-6 border-b flex justify-between items-center shrink-0">
+    <div class="bg-white text-gray-800 max-w-2xl w-full rounded-3xl border-4 border-[#40E0D0] shadow-2xl">
+        <div class="sticky top-0 bg-white p-6 border-b flex justify-between items-center rounded-t-3xl">
             <h2 class="font-crazy text-2xl text-turquoise-600 uppercase">POLÍTICA DE PRIVACIDAD</h2>
             <button onclick="toggleModal('modalPrivacidad')" class="text-gray-400 text-2xl">×</button>
         </div>
-        
-        <div class="p-6 md:p-10 text-sm space-y-6 text-justify modal-content-scroll">
+        <div class="p-6 md:p-10 text-sm space-y-6 modal-content text-justify">
             <section>
                 <h3 class="font-bold text-gray-900">1. Identificación del Responsable del Tratamiento</h3>
-                <p>CRAZY BUSINESS S.L., con CIF B22801138, con domicilio en Calle Los Cerezos 32, 28979 Serranillos del Valle (Madrid), y correo electrónico <a href="mailto:anonimonaranja@gmail.com" class="policy-link">anonimonaranja@gmail.com</a> es la responsable del tratamiento de los datos personales recogidos.</p>
+                <p>CRAZY BUSINESS S.L., con CIF B22801138, con domicilio en Calle Los Cerezos 32, 28979 Serranillos del Valle (Madrid), y correo electronico <a href="mailto:anonimonaranja@gmail.com" class="policy-link">anonimonaranja@gmail.com</a> es la responsable del tratamiento de los datos personales recogidos.</p>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">2. Finalidad del Tratamiento de Datos</h3>
                 <p>Los datos personales de los clientes y colaboradores se recogen con las siguientes finalidades:</p>
@@ -256,42 +170,49 @@
                     <li>Cumplir con las obligaciones legales y estatutarias de la entidad.</li>
                 </ul>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">3. Base Legal del Tratamiento</h3>
                 <p>El tratamiento de los datos personales se basa en el consentimiento del interesado y en el cumplimiento de obligaciones legales aplicables a CRAZY BUSINESS S.L..</p>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">4. Datos Recogidos</h3>
                 <p>Los datos personales recogidos incluyen, entre otros: Nombre y apellidos, datos de contacto (correo electrónico, teléfono, dirección postal).</p>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">5. Cesión de Datos a Terceros</h3>
                 <p>CRAZY BUSINESS S.L. no cederá los datos personales a terceros sin el consentimiento previo del titular, salvo obligación legal o cuando sea necesario para la prestación de servicios vinculados a la empresa.</p>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">6. Derechos de los Titulares de los Datos</h3>
                 <p>Los interesados tienen derecho a acceder, rectificar, suprimir, limitar u oponerse al tratamiento. Para ejercer estos derechos, pueden dirigirse a CRAZY BUSINESS S.L. mediante correo electrónico a <a href="mailto:anonimonaranja@gmail.com" class="policy-link">anonimonaranja@gmail.com</a> o por escrito a la dirección de la entidad.</p>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">7. Conservación de los Datos</h3>
                 <p>Los datos se conservarán mientras se mantenga la relación comercial y durante el tiempo necesario para cumplir las obligaciones legales.</p>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">8. Seguridad de los Datos</h3>
                 <p>Adoptamos medidas técnicas para garantizar la seguridad y confidencialidad de los datos personales.</p>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">9. Modificaciones</h3>
                 <p>Esta política podrá actualizarse. Cualquier cambio será comunicado a través de los canales habituales de la empresa.</p>
             </section>
+
             <section>
                 <h3 class="font-bold text-gray-900">10. Contacto y Reclamaciones</h3>
                 <p>Para cualquier consulta sobre la presente política de privacidad o para presentar una reclamación, los interesados pueden dirigirse a Crazy Business a través de <a href="mailto:anonimonaranja@gmail.com" class="policy-link">anonimonaranja@gmail.com</a>. En caso de no estar satisfecho con la respuesta, pueden presentar una reclamación ante la Agencia Española de Protección de Datos en <a href="https://www.aepd.es" target="_blank" class="policy-link">www.aepd.es</a>.</p>
             </section>
         </div>
-
-        <div class="p-4 text-center border-t shrink-0">
-            <button onclick="toggleModal('modalPrivacidad')" class="bg-black text-white px-8 py-2 rounded-full font-bold uppercase text-xs hover:bg-[#FF00FF] transition">Cerrar</button>
+        <div class="p-4 text-center border-t rounded-b-3xl bg-gray-50">
+            <button onclick="toggleModal('modalPrivacidad')" class="bg-black text-white px-8 py-2 rounded-full font-bold uppercase text-xs hover:bg-gray-800 transition">Cerrar</button>
         </div>
     </div>
 </div>

@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Oficial Norber Alonso - Crazy Cars Garage</title>
+    <title>Manómetro Volumétrico NA - Crazy Cars Garage</title>
 
     <meta name="author" content="Jose Antonio Cadenas Martín">
     <meta name="copyright" content="Jose Antonio Cadenas Martín">
 
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -28,13 +30,8 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .nav-item {
+        h1, h2, h3, .nav-item, .font-crazy {
             font-family: 'Permanent Marker', cursive;
-        }
-
-        .neon-title {
-            color: #fff;
-            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px var(--crazy-fuchsia), 0 0 82px var(--crazy-fuchsia);
         }
 
         .nav-bar {
@@ -42,47 +39,49 @@
             box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
         }
 
+        .product-container {
+            background: white;
+            border-radius: 2rem;
+            border: 4px solid var(--crazy-dark);
+            box-shadow: 15px 15px 0px var(--crazy-dark);
+        }
+
+        .old-price { text-decoration: line-through; color: #999; font-size: 1.5rem; }
+        
+        .current-price {
+            font-family: 'Permanent Marker';
+            font-size: 3.5rem;
+            color: var(--crazy-fuchsia);
+            text-shadow: 3px 3px 0px var(--crazy-dark);
+        }
+
+        .btn-add-cart {
+            background-color: var(--crazy-dark);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 0px #000;
+        }
+
+        .btn-add-cart:hover {
+            background-color: var(--crazy-fuchsia);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 0px #000;
+        }
+
         .nav-link {
             transition: all 0.3s ease;
             text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
         }
 
-        .product-card {
+        /* ESTILO DEL BANNER */
+        #cookieBanner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99999;
             background: white;
-            border-radius: 1.5rem;
-            border: 3px solid var(--crazy-dark);
-            box-shadow: 10px 10px 0px var(--crazy-dark);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .price-tag {
-            background-color: #000;
-            color: var(--crazy-turquoise);
-            font-family: 'Permanent Marker';
-            padding: 8px 20px;
-            transform: rotate(-2deg);
-            display: inline-block;
-            box-shadow: 4px 4px 0px var(--crazy-fuchsia);
-        }
-
-        .badge-norber {
-            background: var(--crazy-dark);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .product-link {
-            display: block;
-            cursor: pointer;
+            display: block; 
         }
 
         /* CORRECCIÓN: Estilo para permitir el scroll en los modales */
@@ -111,8 +110,8 @@
 <body class="flex flex-col min-h-screen">
 
 <section class="relative w-full h-[25vh] md:h-[55vh] overflow-hidden">
-    <img src="IMG_2485.jpeg" class="w-full h-full object-cover object-top" alt="Banner Crazy Cars">
-    <img src="IMG_2455.jpeg" class="absolute top-0 right-0 h-full w-auto object-cover z-10" alt="Arte Crazy Cars">
+    <img src="IMG_2485.jpeg" class="w-full h-full object-cover object-top" alt="Trabajo Crazy Cars Garage">
+    <img src="IMG_2455.jpeg" class="absolute top-0 right-0 h-full w-auto object-cover z-10" alt="Arte Crazy Cars Garage">
 </section>
 
 <nav class="nav-bar text-white sticky top-0 z-50">
@@ -133,63 +132,56 @@
 </nav>
 
 <main class="flex-grow container mx-auto px-4 py-12 max-w-6xl">
-    
-    <div class="text-center mb-16">
-        <span class="badge-norber">Distribuidor Oficial Autorizado</span>
-        <h1 class="text-5xl md:text-8xl neon-title uppercase tracking-tighter mt-4">NORBER ALONSO</h1>
-        <p class="text-white text-xl md:text-2xl mt-4 font-bold uppercase" style="text-shadow: 2px 2px var(--crazy-dark)">Pistolas Profesionales de Pintura</p>
-    </div>
+    <div class="product-container p-6 md:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <div>
+                <img src="IMG_2571.jpeg" class="w-full rounded-2xl border-4 border-gray-100" alt="Pistola Vulcan">
+                <p class="text-center text-xs mt-4 text-gray-400 font-bold uppercase">Ref: CS08R25VULKAN</p>
+            </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        
-        <div class="product-card flex flex-col">
-            <a href="pistola_R25_Smiley.html" class="product-link">
-                <div class="bg-gray-200 h-72 flex items-center justify-center p-4 hover:bg-gray-300 transition">
-                    <img src="IMG_2570.jpeg" class="max-h-full object-contain" alt="Smiley_main.jpg">
+            <div class="flex flex-col">
+                <span class="bg-black text-white px-4 py-1 rounded-full text-xs font-bold self-start mb-2">¡NUEVA GENERACIÓN!</span>
+                <h1 class="text-3xl md:text-5xl mb-4 uppercase font-crazy">Pistola R25 Vulcan Compact Pro</h1>
+                
+                <p class="text-gray-600 mb-6 italic">Pistola R25 generación híbrida para aplicación de colores base agua o base solvente. <strong>INCLUYE DEPOSITO DE GRAVEDAD.</strong></p>
+
+                <div class="mb-6">
+                    <span class="old-price">533,35 €</span>
+                    <div class="current-price">320,01 €</div>
                 </div>
-            </a>
-            <div class="p-8 text-center flex-grow">
-                <a href="pistola_R25_Smiley.html" class="hover:text-fuchsia-600 transition">
-                    <h3 class="text-3xl mb-2 uppercase">Pistola R25 Smiley</h3>
-                </a>
-                <p class="text-gray-500 text-sm mb-4">Acabado Premium para barnices</p>
-                <div class="price-tag text-2xl mb-6">289.00€</div>
-                <a href="pistola_R25_Smiley.html" class="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-fuchsia-600 transition block uppercase shadow-lg">Ver Detalles</a>
+
+                <div class="bg-gray-100 border-2 border-dashed border-gray-400 p-4 rounded-xl mb-6">
+                    <p class="text-xs text-gray-500 uppercase font-bold">⚠️ Nota importante:</p>
+                    <p class="text-sm">No incluye manómetro. No incluido cople para vasos PPS ni PPS 2.0.</p>
+                </div>
+
+                <button id="btn-agregar" class="btn-add-cart w-full font-black py-5 rounded-2xl text-2xl uppercase">
+                    <i class="fas fa-cart-plus mr-2"></i> Añadir al carrito
+                </button>
+                
+                <a href="carrito.html" class="text-center mt-4 text-fuchsia-600 font-bold underline uppercase">Ver mi carrito</a>
             </div>
         </div>
 
-        <div class="product-card flex flex-col">
-            <a href="vulcan_compact_pro.html" class="product-link">
-                <div class="bg-gray-200 h-72 flex items-center justify-center p-4 hover:bg-gray-300 transition">
-                    <img src="IMG_2571.jpeg" class="max-h-full object-contain" alt="Pistola vulcan compact pro">
+        <div class="mt-16 border-t pt-10">
+            <h2 class="text-3xl font-crazy mb-6">Descripción del producto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700 leading-relaxed">
+                <div>
+                    <p class="mb-4">Tecnología de ultima generación híbrida para aplicaciones de barnices y colores base agua o base solvente.</p>
+                    <p class="mb-4 font-bold">Cuerpo de aleación de aluminio ultra ligero: ALUMINEX PRO.</p>
+                    <p>Boquilla híbrida HT2. Acabados de máxima calidad garantizados.</p>
                 </div>
-            </a>
-            <div class="p-8 text-center flex-grow">
-                <a href="vulcan_compact_pro.html" class="hover:text-fuchsia-600 transition">
-                    <h3 class="text-3xl mb-2 uppercase">Pistola R25 Vulcan Compact Pro</h3>
-                </a>
-                <p class="text-gray-500 text-sm mb-4">Eficiencia y versatilidad</p>
-                <div class="price-tag text-2xl mb-6">320.01€</div>
-                <a href="vulcan_compact_pro.html" class="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-fuchsia-600 transition block uppercase shadow-lg">Ver Detalles</a>
+                <div class="bg-black text-white p-6 rounded-2xl">
+                    <ul class="space-y-2 uppercase text-sm font-bold">
+                        <li class="flex justify-between"><span>Peso:</span> <span class="text-turquoise-400">440 gramos</span></li>
+                        <li class="flex justify-between"><span>Material:</span> <span class="text-turquoise-400">Sin juntas de goma/teflón</span></li>
+                        <li class="flex justify-between"><span>Consumo de Aire:</span> <span class="text-turquoise-400">180 - 220 L/min</span></li>
+                        <li class="flex justify-between"><span>Categoría:</span> <span class="text-turquoise-400">Pistolas Híbridas</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
-
-        <div class="product-card flex flex-col">
-            <a href="manometro_volumetrico_NA.html" class="product-link">
-                <div class="bg-gray-200 h-72 flex items-center justify-center p-4 hover:bg-gray-300 transition">
-                    <img src="IMG_2572.jpeg" class="max-h-full object-contain" alt="Manometro Volumetrico">
-                </div>
-            </a>
-            <div class="p-8 text-center flex-grow">
-                <a href="manometro_volumetrico_NA.html" class="hover:text-fuchsia-600 transition">
-                    <h3 class="text-3xl mb-2 uppercase">Manometro Volumetrico</h3>
-                </a>
-                <p class="text-gray-500 text-sm mb-4">Regulador con Manometro</p>
-                <div class="price-tag text-2xl mb-6">29.00€</div>
-                <a href="manometro_volumetrico_NA.html" class="w-full bg-gray-900 text-white font-black py-4 rounded-xl hover:bg-fuchsia-600 transition block uppercase shadow-lg">Ver Detalles</a>
-            </div>
-        </div>
-
     </div>
 </main>
 
@@ -326,6 +318,41 @@
         const banner = document.getElementById('cookieBanner');
         banner.style.display = 'none';
     }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const boton = document.getElementById('btn-agregar');
+
+        boton.addEventListener('click', function() {
+            // 1. Definir el producto actualizado para Vulcan
+            const producto = {
+                id: 'CS08R25VULKAN',
+                nombre: 'Pistola R25 Vulcan Compact Pro',
+                precio: 320.01,
+                imagen: 'IMG_2571.jpeg',
+                cantidad: 1
+            };
+
+            // 2. Obtener carrito de localStorage
+            let carrito = JSON.parse(localStorage.getItem('crazy_cart')) || [];
+
+            // 3. Ver si ya existe
+            const existe = carrito.findIndex(item => item.id === producto.id);
+
+            if (existe !== -1) {
+                carrito[existe].cantidad += 1;
+            } else {
+                carrito.push(producto);
+            }
+
+            // 4. Guardar
+            localStorage.setItem('crazy_cart', JSON.stringify(carrito));
+
+            // 5. Feedback
+            alert('¡Añadido! La Vulcan Compact Pro ya está en tu carrito.');
+        });
+    });
 </script>
 
 </body>
