@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Cars Garage - Chapa y Pintura</title>
+
+    <meta name="author" content="Jose Antonio Cadenas Martín">
+    <meta name="copyright" content="Jose Antonio Cadenas Martín">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --crazy-turquoise: #40E0D0;
+            --crazy-fuchsia: #FF00FF;
+            --crazy-dark: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--crazy-turquoise);
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .nav-item, .font-crazy {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .neon-title {
+            color: #fff;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px var(--crazy-fuchsia),
+                0 0 82px var(--crazy-fuchsia);
+        }
+
+        .nav-bar {
+            background-color: var(--crazy-fuchsia);
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+        }
+
+        .gallery-img {
+            transition: transform 0.3s ease;
+            border: 4px solid var(--crazy-fuchsia);
+            box-shadow: 5px 5px 0px var(--crazy-dark);
+        }
+
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite ease-in-out;
+        }
+
+        /* ESTILO DEL BANNER */
+        #cookieBanner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99999;
+            background: white;
+            display: block; 
+        }
+
+        .modal-content {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        /* ESTILO ESPECÍFICO PARA LOS HIPERVÍNCULOS SOLICITADOS */
+        .policy-link {
+            color: #0000FF !important;
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+<div id="cookieBanner" class="border-t-4 border-[#FF00FF] p-6 shadow-[0_-10px_50px_rgba(0,0,0,0.5)]">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-sm text-gray-800 text-justify leading-relaxed">
+            Este portal web únicamente utiliza cookies propias con finalidad técnica, no recaba ni cede datos de carácter personal de los usuarios sin su conocimiento. Sin embargo, contiene enlaces a sitios web de terceros con políticas de privacidad ajenas a la de Crazy Business que usted podrá decidir si acepta o no cuando acceda a ellos. 
+            <button onclick="toggleModal('modalCookies')" class="font-bold text-blue-700 underline ml-1 hover:text-[#FF00FF]">Documentación de cookies</button>
+        </div>
+        <button onclick="closeCookieBanner()" class="bg-black text-white px-10 py-3 rounded-full font-bold uppercase text-xs hover:bg-[#FF00FF] transition-all whitespace-nowrap">Aceptar</button>
+    </div>
+</div>
+
+<section class="relative w-full h-[25vh] md:h-[55vh] overflow-hidden">
+    <img src="IMG_2485.jpeg" class="w-full h-full object-cover object-top" alt="Trabajo Crazy Cars Garage">
+    <img src="IMG_2455.jpeg" class="absolute top-0 right-0 h-full w-auto object-cover z-10" alt="Arte Crazy Cars Garage">
+</section>
+
+<nav class="nav-bar text-white sticky top-0 z-50">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="flex flex-col md:flex-row justify-center md:justify-between items-center py-3">
+            <a href="index.html" class="text-2xl font-bold hidden md:block font-crazy">CRAZY BUSINESS S.L.</a>
+            <ul class="flex flex-wrap justify-center gap-4 text-sm md:text-lg uppercase font-crazy">
+                <li><a href="index.html" class="nav-link px-3 py-2 block text-white"><i class="fas fa-home"></i></a></li>
+                <li><a href="historia.html" class="nav-link px-3 py-2 block">Historia</a></li>
+                <li><a href="autos-locos.html" class="nav-link px-3 py-2 block">Autos Locos</a></li>
+                <li><a href="servicios.html" class="nav-link px-3 py-2 block">Servicios</a></li>
+                <li><a href="build.html" class="nav-link px-3 py-2 block">Podcast</a></li>
+                <li><a href="build.html" class="nav-link px-3 py-2 block">Tienda</a></li>
+                <li><a href="carrito.html" class="nav-link px-3 py-2 block"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="container mx-auto px-4 mt-8 max-w-6xl">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="animate-bounce-slow">
+            <img src="IMG_2476.png" alt="Logo Crazy Cars Garage" class="w-48 md:w-64 rounded-full border-4 border-white shadow-2xl mx-auto">
+        </div>
+        <div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-3xl shadow-2xl flex-grow transform rotate-0 md:-rotate-1 border-b-8 border-[#FF00FF] text-center md:text-right">
+            <h1 class="text-4xl md:text-7xl mb-4 md:mb-6 neon-title font-crazy">CRAZY CARS GARAGE</h1>
+            <p class="text-lg md:text-2xl font-bold text-gray-800 mb-4">Donde la locura se convierte en arte.</p>
+            <div class="w-full h-1 bg-gradient-to-r md:bg-gradient-to-l from-purple-500 via-pink-500 to-red-500 mb-6"></div>
+            <p class="text-md md:text-xl text-gray-700 leading-relaxed font-medium italic">
+                "Nos dedicamos a <span class="text-[#FF00FF] font-black bg-yellow-300 px-2 transform skew-x-12 inline-block">chapa, pintura y alguna que otra floritura</span>."
+            </p>
+            <p class="mt-4 text-sm md:text-base text-gray-600">
+		En Crazy Business S.L. no solo reparamos coches, les devolvemos el alma.</p>
+            <p class="mt-4 text-sm md:text-base text-gray-600">
+		Desde restauraciones clásicas hasta personalizaciones extremas.</p>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto px-4 py-12 max-w-6xl">
+    <h2 class="text-3xl md:text-4xl text-center text-white mb-10 font-crazy" style="text-shadow: 2px 2px #FF00FF;">NUESTROS TRABAJOS</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <img src="IMG_2488.jpeg" alt="Aerografía" class="gallery-img w-full h-64 object-cover rounded-xl">
+        <img src="IMG_2492.jpeg" alt="Restauración" class="gallery-img w-full h-64 object-cover rounded-xl">
+        <img src="IMG_2481.jpeg" alt="Proceso" class="gallery-img w-full h-64 object-cover rounded-xl">
+    </div>
+</main>
+
+<footer class="bg-gray-900 text-white pt-10 pb-6 border-t-4 border-[#FF00FF]">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl md:text-2xl text-[#40E0D0] mb-4 font-crazy">Síguenos</h3>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="https://www.facebook.com/david.vergaracaraballos/?locale=es_LA" target="_blank" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/crazy_cars_garage_davidvergara?igsh=Zzlia2ozbXNvNG9u" target="_blank" class="w-12 h-12 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/34652748175" target="_blank" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="text-center md:text-right bg-gray-800 p-5 rounded-xl border border-[#40E0D0] w-full md:w-auto">
+                <h3 class="text-lg text-[#FF00FF] mb-2 uppercase font-crazy">Ubicación</h3>
+                <p class="text-sm">Calle Los Cerezos 32</p>
+                <p class="text-sm mb-4">Serranillos del Valle, Madrid</p>
+                <a href="https://maps.google.com" target="_blank" class="inline-block bg-[#40E0D0] text-gray-900 font-bold py-2 px-6 rounded-full text-xs hover:bg-white transition uppercase">VER EN MAPA</a>
+            </div>
+        </div>
+        <div class="text-center mt-10 pt-4 border-t border-gray-700">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-[10px] uppercase font-bold text-gray-500 mb-4">
+                <button onclick="toggleModal('modalLegal')" class="hover:text-[#40E0D0]">Aviso Legal</button>
+                <button onclick="toggleModal('modalPrivacidad')" class="hover:text-[#40E0D0]">Política de Privacidad</button>
+                <button onclick="toggleModal('modalCookies')" class="hover:text-[#40E0D0]">Política de Cookies</button>
+            </div>
+            <p class="text-gray-600 text-[10px]">© 2024 Crazy Business S.L. - CIF B22801138</p>
+        </div>
+    </div>
+</footer>
+
+<div id="modalCookies" class="fixed inset-0 bg-black bg-opacity-90 z-[100000] hidden flex items-center justify-center p-4">
+    <div class="bg-white text-gray-800 max-w-2xl w-full rounded-3xl border-4 border-gray-400 shadow-2xl overflow-hidden">
+        <div class="p-6 md:p-10 text-sm space-y-6 text-justify modal-content">
+            <h2 class="font-bold uppercase text-xl border-b pb-2 text-gray-900">Política de cookies</h2>
+            <p>Política de cookies. Crazy Business no utiliza cookies para recoger información de los usuarios. Únicamente se utilizan cookies propias y de terceros con finalidad técnica para permitir navegación a través del sitio web y la utilización de las diferentes opciones y servicios que en ella existen.</p>
+            <p>El portal del que es titular Crazy Business contiene enlaces a sitios web de terceros, cuyas políticas de privacidad son ajenas a la de Crazy Business. Al acceder a tales sitios web usted puede decidir si acepta sus políticas de privacidad y de cookies. Con carácter general, si navega por internet usted puede aceptar o rechazar las cookies de terceros desde las opciones de configuración de su navegador.</p>
+        </div>
+        <div class="p-4 text-center border-t bg-gray-50">
+            <button onclick="toggleModal('modalCookies')" class="bg-black text-white px-8 py-2 rounded-full font-bold uppercase text-xs hover:bg-gray-700 transition">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<div id="modalPrivacidad" class="fixed inset-0 bg-black bg-opacity-80 z-[101] hidden flex items-center justify-center p-4">
+    <div class="bg-white text-gray-800 max-w-2xl w-full rounded-3xl border-4 border-[#40E0D0] shadow-2xl">
+        <div class="sticky top-0 bg-white p-6 border-b flex justify-between items-center rounded-t-3xl">
+            <h2 class="font-crazy text-2xl text-turquoise-600 uppercase">POLÍTICA DE PRIVACIDAD</h2>
+            <button onclick="toggleModal('modalPrivacidad')" class="text-gray-400 text-2xl">×</button>
+        </div>
+        <div class="p-6 md:p-10 text-sm space-y-6 modal-content text-justify">
+            <section>
+                <h3 class="font-bold text-gray-900">1. Identificación del Responsable del Tratamiento</h3>
+                <p>CRAZY BUSINESS S.L., con CIF B22801138, con domicilio en Calle Los Cerezos 32, 28979 Serranillos del Valle (Madrid), y correo electronico <a href="mailto:anonimonaranja@gmail.com" class="policy-link">anonimonaranja@gmail.com</a> es la responsable del tratamiento de los datos personales recogidos.</p>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">2. Finalidad del Tratamiento de Datos</h3>
+                <p>Los datos personales de los clientes y colaboradores se recogen con las siguientes finalidades:</p>
+                <ul class="list-disc ml-5 mt-2 space-y-1">
+                    <li>Gestionar la inscripción y participación en la actividad comercial de la empresa.</li>
+                    <li>Informar sobre actividades y eventos organizados por CRAZY BUSINESS S.L..</li>
+                    <li>Cumplir con las obligaciones legales y estatutarias de la entidad.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">3. Base Legal del Tratamiento</h3>
+                <p>El tratamiento de los datos personales se basa en el consentimiento del interesado y en el cumplimiento de obligaciones legales aplicables a CRAZY BUSINESS S.L..</p>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">4. Datos Recogidos</h3>
+                <p>Los datos personales recogidos incluyen, entre otros: Nombre y apellidos, datos de contacto (correo electrónico, teléfono, dirección postal).</p>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">5. Cesión de Datos a Terceros</h3>
+                <p>CRAZY BUSINESS S.L. no cederá los datos personales a terceros sin el consentimiento previo del titular, salvo obligación legal o cuando sea necesario para la prestación de servicios vinculados a la empresa.</p>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">6. Derechos de los Titulares de los Datos</h3>
+                <p>Los interesados tienen derecho a acceder, rectificar, suprimir, limitar u oponerse al tratamiento. Para ejercer estos derechos, pueden dirigirse a CRAZY BUSINESS S.L. mediante correo electrónico a <a href="mailto:anonimonaranja@gmail.com" class="policy-link">anonimonaranja@gmail.com</a> o por escrito a la dirección de la entidad.</p>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">7. Conservación de los Datos</h3>
+                <p>Los datos se conservarán mientras se mantenga la relación comercial y durante el tiempo necesario para cumplir las obligaciones legales.</p>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">8. Seguridad de los Datos</h3>
+                <p>Adoptamos medidas técnicas para garantizar la seguridad y confidencialidad de los datos personales.</p>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">9. Modificaciones</h3>
+                <p>Esta política podrá actualizarse. Cualquier cambio será comunicado a través de los canales habituales de la empresa.</p>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-gray-900">10. Contacto y Reclamaciones</h3>
+                <p>Para cualquier consulta sobre la presente política de privacidad o para presentar una reclamación, los interesados pueden dirigirse a Crazy Business a través de <a href="mailto:anonimonaranja@gmail.com" class="policy-link">anonimonaranja@gmail.com</a>. En caso de no estar satisfecho con la respuesta, pueden presentar una reclamación ante la Agencia Española de Protección de Datos en <a href="https://www.aepd.es" target="_blank" class="policy-link">www.aepd.es</a>.</p>
+            </section>
+        </div>
+        <div class="p-4 text-center border-t rounded-b-3xl bg-gray-50">
+            <button onclick="toggleModal('modalPrivacidad')" class="bg-black text-white px-8 py-2 rounded-full font-bold uppercase text-xs hover:bg-gray-800 transition">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<div id="modalLegal" class="fixed inset-0 bg-black bg-opacity-90 z-[100000] hidden flex items-center justify-center p-4">
+    <div class="bg-white text-gray-800 max-w-2xl w-full rounded-3xl border-4 border-[#FF00FF] shadow-2xl">
+        <div class="p-6 border-b flex justify-between items-center rounded-t-3xl">
+            <h2 class="font-crazy text-2xl text-fuchsia-600 uppercase">Aviso Legal</h2>
+            <button onclick="toggleModal('modalLegal')" class="text-gray-400 text-2xl">×</button>
+        </div>
+        <div class="p-6 text-sm space-y-4">
+            <p><strong>CRAZY BUSINESS S.L.</strong> - CIF B22801138</p>
+            <p>Calle Los Cerezos 32, 28979 Serranillos del Valle, Madrid.</p>
+        </div>
+        <div class="p-4 text-center border-t"><button onclick="toggleModal('modalLegal')" class="bg-black text-white px-8 py-2 rounded-full font-bold uppercase text-xs">Cerrar</button></div>
+    </div>
+</div>
+
+<script>
+    function toggleModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.toggle('hidden');
+        if (!modal.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            const anyOpen = document.querySelectorAll('[id^="modal"]:not(.hidden)').length > 0;
+            if (!anyOpen) document.body.style.overflow = 'auto';
+        }
+    }
+
+    function closeCookieBanner() {
+        const banner = document.getElementById('cookieBanner');
+        banner.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
